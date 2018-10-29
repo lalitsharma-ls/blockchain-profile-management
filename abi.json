@@ -1,0 +1,154 @@
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "college",
+				"type": "string"
+			},
+			{
+				"name": "uid",
+				"type": "uint256"
+			},
+			{
+				"name": "year",
+				"type": "uint256"
+			},
+			{
+				"name": "last_company",
+				"type": "bytes32"
+			},
+			{
+				"name": "last_salary",
+				"type": "uint256"
+			}
+		],
+		"name": "add_user",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "uid",
+				"type": "uint256"
+			},
+			{
+				"name": "year",
+				"type": "uint256"
+			},
+			{
+				"name": "last_company",
+				"type": "bytes32"
+			},
+			{
+				"name": "last_salary",
+				"type": "uint256"
+			}
+		],
+		"name": "update_timeline",
+		"outputs": [
+			{
+				"name": "result",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"name": "getmemb",
+		"outputs": [
+			{
+				"name": "year",
+				"type": "uint256[]"
+			},
+			{
+				"name": "cname",
+				"type": "bytes32[]"
+			},
+			{
+				"name": "salary",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "member",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "college",
+				"type": "string"
+			},
+			{
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "user",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "college",
+				"type": "string"
+			},
+			{
+				"name": "uid",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

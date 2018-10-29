@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mount Talent Consultacey </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">BlockChain Profile Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="view.html">View Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white pb-5">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">Add your records to blockchain</h1>
+          <a href="#addnow" class="btn btn-primary btn-xl rounded-pill mt-5">Add Profile</a>
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div>
+    </header>
+<!-- name,college,uid,year,last_company,last_salary -->
+    <section>
+      <div class="container py-5" id="addnow">
+            <form >
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">College Name</label>
+        <input type="text" class="form-control" id="college" aria-describedby="emailHelp" placeholder="Enter College">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Aadhar Number</label>
+        <input type="text" class="form-control" id="aadhar" aria-describedby="emailHelp" placeholder="Enter aadhar">
+       
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Last year of employement</label>
+        <input type="text" class="form-control" id="year" aria-describedby="emailHelp" placeholder="Enter year">
+       
+      </div>
+       <div class="form-group">
+        <label for="exampleInputEmail1">Last Company Name</label>
+        <input type="text" class="form-control" id="company" aria-describedby="emailHelp" placeholder="Enter company">
+       
+      </div>
+       <div class="form-group">
+        <label for="exampleInputEmail1">Last Salary Amount</label>
+        <input type="text" class="form-control" id="salary" aria-describedby="emailHelp" placeholder="Enter Salary">
+       
+      </div>
+      <button id="submitB" class="btn btn-primary">Submit</button>
+    </form>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+      
+     $("form").submit(function(e){
+        e.preventDefault();
+        if(typeof web3!== 'undefined'){
+          alert("metamask");
+        }else{
+          alert("no network!! login in metamask");
+        }
+
+        try{
+          var abi=[
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "college",
+        "type": "string"
+      },
+      {
+        "name": "uid",
+        "type": "uint256"
+      },
+      {
+        "name": "year",
+        "type": "uint256"
+      },
+      {
+        "name": "last_company",
+        "type": "bytes32"
+      },
+      {
+        "name": "last_salary",
+        "type": "uint256"
+      }
+    ],
+    "name": "add_user",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "uid",
+        "type": "uint256"
+      },
+      {
+        "name": "year",
+        "type": "uint256"
+      },
+      {
+        "name": "last_company",
+        "type": "bytes32"
+      },
+      {
+        "name": "last_salary",
+        "type": "uint256"
+      }
+    ],
+    "name": "update_timeline",
+    "outputs": [
+      {
+        "name": "result",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "uid",
+        "type": "uint256"
+      }
+    ],
+    "name": "getmemb",
+    "outputs": [
+      {
+        "name": "year",
+        "type": "uint256[]"
+      },
+      {
+        "name": "cname",
+        "type": "bytes32[]"
+      },
+      {
+        "name": "salary",
+        "type": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "member",
+    "outputs": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "college",
+        "type": "string"
+      },
+      {
+        "name": "uid",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "user",
+    "outputs": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "college",
+        "type": "string"
+      },
+      {
+        "name": "uid",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
+
+ var contractAddr='0x9ab5194ec34cfabe03f0daea8b2aa4d67184b766';
+
+ var contInst = web3.eth.contract(abi);
+var funcs = contInst.at(contractAddr);
+
+funcs.add_user.sendTransaction($("#name").val(),
+  $("#college").val(),
+  parseInt($("#aadhar").val()),
+  parseInt($("#year").val()),
+  '0x6e656f',
+  parseInt($("#salary").val()),
+  {from:web3.eth.accounts[0],gas:4000000},
+  function(error, result){
+  if(error){
+    console.log(error);
+  }else{
+    console.log(result);
+  }
+});
+
+        }catch(err){
+            alert("error in try");
+        }
+
+    });
+
+
+
+    </script>
+  </body>
+
+</html>
